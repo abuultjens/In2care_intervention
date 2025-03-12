@@ -46,9 +46,9 @@ legend_loc_y = 0.71
 legend_loc = (legend_loc_x, legend_loc_y)
 
 # load data files
-data_file = 'Essendon_all_symptom_date.csv'
-data_2023_file = 'Essendon_2023_sympthom.csv'
-data_2022_file = 'Essendon_2022_sympthom.csv'
+data_file = 'Inner_northwest_2024_cases_symptom.csv'
+data_2023_file = 'Inner_northwest_2023_cases_symptom.csv'
+data_2022_file = 'Inner_northwest_2022_cases_symptom.csv'
 
 # read datasets
 data = pd.read_csv(data_file)
