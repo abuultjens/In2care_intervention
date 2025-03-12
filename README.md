@@ -11,3 +11,14 @@ python FET_v4.py [cases_file] [treatment_sites_file] [control_sites_file] [start
 python FET_v4.py Inner_northwest_2024_cases_symptom.csv Treatment_lat_lon.csv Control_lat_lon.csv 1718715600 1724850000
 
 ```
+
+## Make sliding window case counts plot (Fig. 3A):
+```
+python Counts_plot_v3.py
+```
+
+## Make sliding window p-value plot (Fig 3B):
+```
+python sliding_window_density_pval_date_cutoff_zone_v2-egg-count_v5.py
+```
+
