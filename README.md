@@ -8,4 +8,6 @@ python year_alignment_plot_v2_trend_lines_v2.py
 ## Calculate Fisher's exact test for specific time window
 ```
 python FET_v4.py [cases_file] [treatment_sites_file] [control_sites_file] [start_unix] [end_unix]
+python FET_v4.py Inner_northwest_2024_cases_symptom.csv Treatment_lat_lon.csv Control_lat_lon.csv 1718715600	1724850000
+
 ```
