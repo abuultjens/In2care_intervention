@@ -1,8 +1,13 @@
 # In2care_intervention
 
-## make epidemiological plot (Fig. 1A)
+## Make epidemiological plot (Fig. 1A):
 ```
 python year_alignment_plot_v2_trend_lines_v2.py
+```
+
+## Make mapping plot (Fig. 1B):
+```
+python Fig_1_v7.py
 ```
 
 ## Calculate Fisher's exact test for specific time window
