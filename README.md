@@ -27,4 +27,12 @@ python sliding_window_density_pval_date_cutoff_zone_v2-egg-count_v5.py
 python Timeplot_of_egg-count-diff_and_treat_mean-diff_v4.py
 ```
 
+## Compare imputed egg counts with actual 2022 egg counts (Fig. SX):
+```
+python Comparing_imputed_vs_2022_mozzie_data.py
+```
+
+
+
+
 
