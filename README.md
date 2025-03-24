@@ -1,5 +1,19 @@
 # In2care_intervention
 
+# Dependencies:
+```
+dateutil==2.8.2
+geopy==2.4.0
+matplotlib==3.7.1
+scipy==1.9.1
+shapely==2.0.2
+statsmodels==0.13.2
+contextily==1.6.2
+geopandas==1.0.1
+numpy==1.26.4
+pandas==2.2.3
+```
+
 ## Make epidemiological plot (Fig. 1A):
 ```
 python year_alignment_plot_v2_trend_lines_v2.py
