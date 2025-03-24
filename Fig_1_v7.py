@@ -92,7 +92,7 @@ polygon_label_offset_factor = 0.02
 
 # file paths
 meshblock_shp_path = '1270055001_mb_2011_vic_shape/MB_2011_VIC.shp'
-cases_csv_path = 'Essendon_2024_all_symptom_date_70.csv'
+cases_csv_path = 'Inner_northwest_2024_cases_symptom.csv'
 
 # read the meshblock shapefile
 meshblocks = gpd.read_file(meshblock_shp_path)
