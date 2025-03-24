@@ -91,7 +91,7 @@ polygon_label_color = 'white'
 polygon_label_offset_factor = 0.02 
 
 # file paths
-meshblock_shp_path = '/Users/abuultjens/Google Drive/OneDrive/PhD/Bioinformatics/Mozzie_surveillance/QGIS/1270055001_mb_2011_vic_shape/MB_2011_VIC.shp'
+meshblock_shp_path = '1270055001_mb_2011_vic_shape/MB_2011_VIC.shp'
 cases_csv_path = 'Essendon_2024_all_symptom_date_70.csv'
 
 # read the meshblock shapefile
