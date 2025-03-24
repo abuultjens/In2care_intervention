@@ -67,18 +67,18 @@ meshblock_colour_3_cases = 'darkred'
 
 # paths to polygon KML files to overlay
 polygon_kml_files = [
-     'Treatment_1.kml',
-     'Treatment_2.kml',
-     'Treatment_3.kml',
-     'Treatment_4.kml',
-     'Treatment_5.kml',
-     'Treatment_6.kml',
-     'Control_1.kml',
-     'Control_2.kml',
-     'Control_3.kml',
-     'Control_4.kml',
-     'Control_5.kml',
-     'Control_6.kml',
+     'kml_files/Treatment_1.kml',
+     'kml_files/Treatment_2.kml',
+     'kml_files/Treatment_3.kml',
+     'kml_files/Treatment_4.kml',
+     'kml_files/Treatment_5.kml',
+     'kml_files/Treatment_6.kml',
+     'kml_files/Control_1.kml',
+     'kml_files/Control_2.kml',
+     'kml_files/Control_3.kml',
+     'kml_files/Control_4.kml',
+     'kml_files/Control_5.kml',
+     'kml_files/Control_6.kml',
 ]
 polygon_edgecolor = 'black'
 polygon_facecolor = 'none'
