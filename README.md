@@ -8,6 +8,9 @@ python year_alignment_plot_v2_trend_lines_v2.py
 ## Make mapping plot (Fig. 1B):
 ```
 python Fig_1_v7.py
+This requires the ESRI shapefile format files from the Australian Bureau of Statistics (update line 94 with path to these files):
+https://www.abs.gov.au/ausstats/subscriber.nsf/log?openagent&1270055001_mb_2011_vic_shape.zip&1270.0.55.001&Data%20Cubes&85F5B2ED8E3DC957CA257801000CA953&0&July%202011&23.12.2010&Latest
+
 ```
 
 ## Calculate Fisher's exact test for specific time window
