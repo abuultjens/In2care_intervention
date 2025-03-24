@@ -202,9 +202,9 @@ treatment_buffers.plot(ax=ax, color=buffer_fill_color, alpha=buffer_alpha,
                        edgecolor=buffer_fill_color, zorder=1)
 
 # plot meshblocks with cases
-for cat, color in category_colors.items():
-    subset = meshblocks_cases_clipped[meshblocks_cases_clipped['case_category'] == cat]
-    subset.plot(ax=ax, color=color, edgecolor='black', linewidth=0.8, zorder=2)
+#for cat, color in category_colors.items():
+#    subset = meshblocks_cases_clipped[meshblocks_cases_clipped['case_category'] == cat]
+#    subset.plot(ax=ax, color=color, edgecolor='black', linewidth=0.8, zorder=2)
 
 # load and plot additional polygon KML files 
 if polygon_kml_files:
@@ -243,9 +243,9 @@ legend_handles = [
     Patch(facecolor=treatment_circle_colour, edgecolor=treatment_circle_colour, label='Treatment Sites'),
     Patch(facecolor=control_circle_colour, edgecolor=control_circle_colour, label='Control Sites'),
     Patch(facecolor=buffer_fill_color, edgecolor=buffer_fill_color, label='800m radius'),
-    Patch(facecolor=meshblock_colour_1_case, edgecolor='black', label='1 case'),
-    Patch(facecolor=meshblock_colour_2_cases, edgecolor='black', label='2 cases'),
-    Patch(facecolor=meshblock_colour_3_cases, edgecolor='black', label='3 cases')
+#    Patch(facecolor=meshblock_colour_1_case, edgecolor='black', label='1 case'),
+#    Patch(facecolor=meshblock_colour_2_cases, edgecolor='black', label='2 cases'),
+#    Patch(facecolor=meshblock_colour_3_cases, edgecolor='black', label='3 cases')
 ]
 ax.legend(handles=legend_handles, loc=legend_loc, bbox_to_anchor=legend_bbox,
           prop={'size': legend_fontsize})
