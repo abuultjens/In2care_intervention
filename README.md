@@ -95,7 +95,10 @@ Upper = 0.7734
 Final 95% CI for Odds Ratio: (0.0019, 0.7734)
 ```
 
-### How the cases prevented is calculated:
+### How the cases prevented are calculated:
+The question being asked:
+“If the treatment zone had the same proportion of cases as the control zone, how many cases would we have expected to see in the treatment zone? And how many were prevented compared to that expectation?”
+
 Example contingency Table:
 |             | Inside Zone | Outside Zone |
 |-------------|-------------|--------------|
@@ -107,6 +110,38 @@ Cases prevented = (b / (b + d)) * (a + c) - a
 Cases prevented = (7 / (7 + 7)) * (0 + 13) - 0
 Cases prevented = 6.5
 ```
+
+### How the cases prevented 95% confidence intervals are calculated:
+Example contingency Table:
+|             | Inside Zone | Outside Zone |
+|-------------|-------------|--------------|
+| Treatment   | a = 0       | c = 13       |
+| Control     | b = 7       | d = 7        |
+
+```
+With the code:
+from statsmodels.stats.proportion import proportion_confint
+ci_low_p, ci_upp_p = proportion_confint(count=b, nobs=b + d, alpha=0.05, method='beta')
+
+Equations:
+total_n_treatment = a + c
+total_n_control = b + d
+proportion_control = b / total_n_control
+expected_cases_treatment = proportion_control × total_n_treatment
+cases_prevented = expected_cases_treatment − a
+
+Standard_error_of_control_proportion = sqrt(proportion_control × (1 - proportion_control) / total_n_control)
+
+lower_proportion = proportion_control - 1.96 × Standard_error_of_control_proportion
+upper_proportion = proportion_control + 1.96 × Standard_error_of_control_proportion
+
+expected_treatment_lower = lower_proportion × total_n_treatment
+expected_treatment_upper = upper_proportion × total_n_treatment
+
+cases_prevented_lower = expected_treatment_lower - a
+cases_prevented_upper = expected_treatment_upper - a
+```
+
 
 ## Make sliding window case counts plot (Fig. 3A):
 ```
