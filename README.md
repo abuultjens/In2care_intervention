@@ -41,6 +41,12 @@ Inside Zone	Outside Zone
 Treatment	a	c
 Control	b d
 
+This is done in statsmodels, which applies a continuity correction internally to avoid issues with zeros. Specifically, statsmodels uses a small value (often 0.5) in place of 0 counts (the Haldane–Anscombe correction):
+from statsmodels.stats.contingency_tables import Table2x2
+table2x2 = Table2x2(contingency_table)
+odds_ratio = table2x2.oddsratio
+
+The equation is then:
 ORcorrected=(b+0.5)(c+0.5)(a+0.5)(d+0.5)
 ```
 
