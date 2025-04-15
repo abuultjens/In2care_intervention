@@ -35,22 +35,27 @@ python FET_v4.py Inner_northwest_2024_cases_symptom.csv Treatment_lat_lon.csv Co
 ```
 
 ### How the odd's ratio is calculated:
-```
 Contingency Table:
-Inside Zone	Outside Zone
-Treatment	a=0	c=13
-Control	b=7 d=7
+|             | Inside Zone | Outside Zone |
+|-------------|-------------|--------------|
+| Treatment   | a = 0       | c = 13       |
+| Control     | b = 7       | d = 7        |
 
-This is done in statsmodels, which applies a continuity correction internally to avoid issues with zeros. Specifically, statsmodels uses the small value of 0.5 in place of 0 counts (the Haldane–Anscombe correction):
+This analysis uses `statsmodels`, which applies a continuity correction internally
+to avoid issues with zero counts. Specifically, it uses the **Haldane–Anscombe correction**,
+adding 0.5 to cells with zero counts in the table before calculating the odds ratio.
+
+```python
 from statsmodels.stats.contingency_tables import Table2x2
+
 table2x2 = Table2x2(contingency_table)
 odds_ratio = table2x2.oddsratio
+```
 
 The equation is then:
 OR=((b+0.5)/(c+0))/((a+0)/(d+0))
 OR=((0+0.5)/(c+13))/((a+7)/(d+7))
 OR=0.038
-```
 
 ## Make sliding window case counts plot (Fig. 3A):
 ```
