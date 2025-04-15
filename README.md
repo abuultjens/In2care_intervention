@@ -35,7 +35,7 @@ python FET_v4.py Inner_northwest_2024_cases_symptom.csv Treatment_lat_lon.csv Co
 ```
 
 ### How the odd's ratio is calculated:
-Contingency Table:
+Example contingency Table:
 |             | Inside Zone | Outside Zone |
 |-------------|-------------|--------------|
 | Treatment   | a = 0       | c = 13       |
