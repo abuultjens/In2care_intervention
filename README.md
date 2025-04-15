@@ -50,12 +50,12 @@ from statsmodels.stats.contingency_tables import Table2x2
 
 table2x2 = Table2x2(contingency_table)
 odds_ratio = table2x2.oddsratio
-```
 
 The equation is then:
 OR=((b+0.5)/(c+0))/((a+0)/(d+0))
 OR=((0+0.5)/(c+13))/((a+7)/(d+7))
 OR=0.038
+```
 
 ## Make sliding window case counts plot (Fig. 3A):
 ```
