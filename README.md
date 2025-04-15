@@ -34,6 +34,16 @@ python FET_v4.py Inner_northwest_2024_cases_symptom.csv Treatment_lat_lon.csv Co
 
 ```
 
+### How the odd's ratio is calculated:
+```
+Contingency Table:
+Inside Zone	Outside Zone
+Treatment	a	c
+Control	b d
+
+ORcorrected=(b+0.5)(c+0.5)(a+0.5)(d+0.5)
+```
+
 ## Make sliding window case counts plot (Fig. 3A):
 ```
 python Counts_plot_v3.py
