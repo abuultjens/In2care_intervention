@@ -65,8 +65,8 @@ Example contingency Table:
 | Control     | b = 7       | d = 7        |
 
 ```
-Cases prevented = (b / (b + d)) * (a + c)
-Cases prevented = (7 / (7 + 7)) * (0 + 13)
+Cases prevented = (b / (b + d)) * (a + c) - a
+Cases prevented = (7 / (7 + 7)) * (0 + 13) - 0
 Cases prevented = 6.5
 ```
 
