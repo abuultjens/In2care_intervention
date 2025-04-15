@@ -52,9 +52,36 @@ table2x2 = Table2x2(contingency_table)
 odds_ratio = table2x2.oddsratio
 
 The equation is then:
-odds ratio = ((b + 0.5) / (c + 0)) / ((a + 0) / (d + 0))
-odds ratio = ((0 + 0.5) / (c + 13)) / ((a + 7) / (d + 7))
-odds ratio = 0.038
+Odds Ratio = ((b + 0.5) / (c + 0)) / ((a + 0) / (d + 0))
+Odds Ratio = ((0.5) / (13)) / ((7) / (7))
+Odds Ratio = 0.038
+```
+
+### How the odd's ration 95% confidence intervals are calculated:
+Example contingency Table:
+|             | Inside Zone | Outside Zone |
+|-------------|-------------|--------------|
+| Treatment   | a = 0       | c = 13       |
+| Control     | b = 7       | d = 7        |
+
+```
+Standard error = sqrt(1/a + 1/b + 1/c + 1/d)
+Standard error = sqrt(1/0.5 + 1/7 + 1/13 + 1/7)
+Standard error = 1.537
+
+log(OR) = log(0.038) = -3.27
+
+Lower log bound = -3.27 - 1.96 × 1.537
+Lower log bound = -6.28
+Lower = exp(-6.28)
+Lower = 0.0019
+
+Upper log bound = -3.27 + 1.96 × 1.537
+Upper log bound = -0.257
+Upper = exp(-0.257)
+Upper = 0.7734
+
+Final 95% CI for Odds Ratio: (0.0019, 0.7734)
 ```
 
 ### How the cases prevented is calculated:
