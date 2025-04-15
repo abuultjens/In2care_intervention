@@ -52,8 +52,8 @@ table2x2 = Table2x2(contingency_table)
 odds_ratio = table2x2.oddsratio
 
 The equation is then:
-odds ratio = ((b+0.5) / (c+0)) / ((a+0)/(d+0))
-odds ratio = ((0+0.5) / (c+13)) / ((a+7)/(d+7))
+odds ratio = ((b + 0.5) / (c + 0)) / ((a + 0) / (d + 0))
+odds ratio = ((0 + 0.5) / (c + 13)) / ((a + 7) / (d + 7))
 odds ratio = 0.038
 ```
 
@@ -65,8 +65,8 @@ Example contingency Table:
 | Control     | b = 7       | d = 7        |
 
 ```
-Cases prevented = (b/(b+d)) * (a+c)
-Cases prevented = (7/(7+7)) * (0+13)
+Cases prevented = (b / (b + d)) * (a + c)
+Cases prevented = (7 / (7 + 7)) * (0 + 13)
 Cases prevented = 6.5
 ```
 
