@@ -58,11 +58,6 @@ Odds Ratio = 0.038
 ```
 
 ### How the odd's ration 95% confidence intervals are calculated:
-Example contingency Table:
-|             | Inside Zone | Outside Zone |
-|-------------|-------------|--------------|
-| Treatment   | a = 0       | c = 13       |
-| Control     | b = 7       | d = 7        |
 
 ```
   python
@@ -112,12 +107,6 @@ Cases prevented = 6.5
 ```
 
 ### How the cases prevented 95% confidence intervals are calculated:
-Example contingency Table:
-|             | Inside Zone | Outside Zone |
-|-------------|-------------|--------------|
-| Treatment   | a = 0       | c = 13       |
-| Control     | b = 7       | d = 7        |
-
 ```
 With the code:
 from statsmodels.stats.proportion import proportion_confint
