@@ -65,6 +65,17 @@ Example contingency Table:
 | Control     | b = 7       | d = 7        |
 
 ```
+  python
+from statsmodels.stats.contingency_tables import Table2x2
+
+# Create the contingency table
+table2x2 = Table2x2(contingency_table)
+
+# Compute the odds ratio and 95% confidence interval
+odds_ratio = table2x2.oddsratio
+ci_lower, ci_upper = table2x2.oddsratio_confint(alpha=0.05)
+
+Equations:
 Standard error = sqrt(1/a + 1/b + 1/c + 1/d)
 Standard error = sqrt(1/0.5 + 1/7 + 1/13 + 1/7)
 Standard error = 1.537
