@@ -34,7 +34,7 @@ python FET_v4.py Inner_northwest_2024_cases_symptom.csv Treatment_lat_lon.csv Co
 
 ```
 
-### How the odd's ratio is calculated:
+### How the odds ratio is calculated:
 Example contingency Table:
 |             | Inside Zone | Outside Zone |
 |-------------|-------------|--------------|
@@ -60,7 +60,7 @@ Odds Ratio = ((0.5) / (13)) / ((7) / (7))
 Odds Ratio = 0.038
 ```
 
-### How the odd's ration 95% confidence intervals are calculated:
+### How the odds ratio 95% confidence intervals are calculated:
 
 ```
   python
