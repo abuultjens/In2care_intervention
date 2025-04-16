@@ -48,11 +48,14 @@ adding 0.5 to cells with zero counts in the table before calculating the odds ra
 ```python
 from statsmodels.stats.contingency_tables import Table2x2
 
+# Create the contingency table
 table2x2 = Table2x2(contingency_table)
+
+# Compute the odds ratio
 odds_ratio = table2x2.oddsratio
 
-The equation is then:
-Odds Ratio = ((b + 0.5) / (c + 0)) / ((a + 0) / (d + 0))
+The equation is:
+Odds Ratio = ((a + 0.5) / (c + 0)) / ((b + 0) / (d + 0))
 Odds Ratio = ((0.5) / (13)) / ((7) / (7))
 Odds Ratio = 0.038
 ```
@@ -113,22 +116,13 @@ from statsmodels.stats.proportion import proportion_confint
 ci_low_p, ci_upp_p = proportion_confint(count=b, nobs=b + d, alpha=0.05, method='beta')
 
 Equations:
-total_n_treatment = a + c
-total_n_control = b + d
-proportion_control = b / total_n_control
-expected_cases_treatment = proportion_control × total_n_treatment
-cases_prevented = expected_cases_treatment − a
+cases_prevented_lower = ((b / (b + d)) - 1.96 × sqrt((b / (b + d)) × (1 - (b / (b + d))) / (b + d))) × (a + c) - a
+cases_prevented_lower = ((7 / (7 + 7)) - 1.96 × sqrt((7 / (7 + 7)) × (1 - (7 / (7 + 7))) / (7 + 7))) × (0 + 13) - 0
+cases_prevented_lower = 3.09
 
-Standard_error_of_control_proportion = sqrt(proportion_control × (1 - proportion_control) / total_n_control)
-
-lower_proportion = proportion_control - 1.96 × Standard_error_of_control_proportion
-upper_proportion = proportion_control + 1.96 × Standard_error_of_control_proportion
-
-expected_treatment_lower = lower_proportion × total_n_treatment
-expected_treatment_upper = upper_proportion × total_n_treatment
-
-cases_prevented_lower = expected_treatment_lower - a
-cases_prevented_upper = expected_treatment_upper - a
+cases_prevented_upper = ((b / (b + d)) + 1.96 × sqrt((b / (b + d)) × (1 - (b / (b + d))) / (b + d))) × (a + c) - a
+cases_prevented_upper = ((7 / (7 + 7)) + 1.96 × sqrt((7 / (7 + 7)) × (1 - (7 / (7 + 7))) / (7 + 7))) × (0 + 13) - 0
+cases_prevented_upper = 9.90
 ```
 
 
