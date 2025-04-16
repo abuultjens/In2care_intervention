@@ -34,7 +34,7 @@ python FET_v4.py Inner_northwest_2024_cases_symptom.csv Treatment_lat_lon.csv Co
 
 ```
 
-### How the odds ratio is calculated:
+#### How the odds ratio is calculated:
 Example contingency Table:
 |             | Inside Zone | Outside Zone |
 |-------------|-------------|--------------|
@@ -60,7 +60,7 @@ Odds Ratio = ((0.5) / (13)) / ((7) / (7))
 Odds Ratio = 0.038
 ```
 
-### How the odds ratio 95% confidence intervals are calculated:
+#### How the odds ratio 95% confidence intervals are calculated:
 
 ```
   python
@@ -83,7 +83,7 @@ Upper = exp(log(((0 + 0.5) / 13) / (7 / 7)) + 1.96 × sqrt(1 / (0 + 0.5) + 1 / 7
 95% CI for odds ratio: (0.0019, 0.7824)
 ```
 
-### How the cases prevented are calculated:
+#### How the cases prevented are calculated:
 The question being asked:
 “If the treatment zone had the same proportion of cases as the control zone, how many cases would we have expected to see in the treatment zone? And how many were prevented compared to that expectation?”
 
@@ -99,7 +99,7 @@ Cases prevented = (7 / (7 + 7)) * (0 + 13) - 0
 Cases prevented = 6.5
 ```
 
-### How the cases prevented 95% confidence intervals are calculated:
+#### How the cases prevented 95% confidence intervals are calculated:
 ```
 With the code:
 from statsmodels.stats.proportion import proportion_confint
