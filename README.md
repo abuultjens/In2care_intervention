@@ -54,8 +54,8 @@ table2x2 = Table2x2(contingency_table)
 # Compute the odds ratio
 odds_ratio = table2x2.oddsratio
 
-The equation is:
-Odds Ratio = ((a + 0.5) / (c + 0)) / ((b + 0) / (d + 0))
+The equation is: (Note: any cell equal to zero has 0.5 added)
+Odds Ratio = ((a) / (c)) / ((b) / (d))
 Odds Ratio = ((0.5) / (13)) / ((7) / (7))
 Odds Ratio = 0.038
 ```
@@ -73,24 +73,14 @@ table2x2 = Table2x2(contingency_table)
 odds_ratio = table2x2.oddsratio
 ci_lower, ci_upper = table2x2.oddsratio_confint(alpha=0.05)
 
-Equations:
-Standard error = sqrt(1/a + 1/b + 1/c + 1/d)
-Standard error = sqrt(1/0.5 + 1/7 + 1/13 + 1/7)
-Standard error = 1.537
+Equations: (Note: any cell equal to zero has 0.5 added)
+Lower = exp(log(((a) / c) / (b / d)) - 1.96 × sqrt(1 / (a + 0.5) + 1 / b + 1 / c + 1 / d))
+Lower = exp(log(((0 + 0.5) / 13) / (7 / 7)) - 1.96 × sqrt(1 / (0 + 0.5) + 1 / 7 + 1 / 13 + 1 / 7))
 
-log(OR) = log(0.038) = -3.27
+Upper = exp(log(((a + 0.5) / c) / (b / d)) + 1.96 × sqrt(1 / (a + 0.5) + 1 / b + 1 / c + 1 / d))
+Upper = exp(log(((0 + 0.5) / 13) / (7 / 7)) + 1.96 × sqrt(1 / (0 + 0.5) + 1 / 7 + 1 / 13 + 1 / 7))
 
-Lower log bound = -3.27 - 1.96 × 1.537
-Lower log bound = -6.28
-Lower = exp(-6.28)
-Lower = 0.0019
-
-Upper log bound = -3.27 + 1.96 × 1.537
-Upper log bound = -0.257
-Upper = exp(-0.257)
-Upper = 0.7734
-
-Final 95% CI for Odds Ratio: (0.0019, 0.7734)
+95% CI for odds ratio: (0.0019, 0.7824)
 ```
 
 ### How the cases prevented are calculated:
@@ -124,7 +114,6 @@ cases_prevented_upper = ((b / (b + d)) + 1.96 × sqrt((b / (b + d)) × (1 - (b /
 cases_prevented_upper = ((7 / (7 + 7)) + 1.96 × sqrt((7 / (7 + 7)) × (1 - (7 / (7 + 7))) / (7 + 7))) × (0 + 13) - 0
 cases_prevented_upper = 9.90
 ```
-
 
 ## Make sliding window case counts plot (Fig. 3A):
 ```
